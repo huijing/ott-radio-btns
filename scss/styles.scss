@@ -1,0 +1,173 @@
+@import 'https://fonts.googleapis.com/css?family=Shrikhand|Yantramanav';
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Yantramanav', sans-serif;
+}
+
+main {
+  padding: 1em;
+  max-width: 65em;
+}
+
+h1 {
+  font-family: 'Shrikhand', cursive;
+  font-size: calc(2.25vw + 1em);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+.l-flex-parent {
+  display: flex;
+}
+
+.l-flex-1_4 {
+  flex: 0 0 25%;
+}
+
+.o-option {
+  cursor: pointer;
+}
+
+.o-option__img {
+  width: 20vw;
+  height: 20vw;
+  max-height: 200px;
+  max-width: 200px;
+  margin-bottom: 1em;
+  border-radius: 50%;
+  border: 4px solid #fdbb30;
+  pointer-events: none;
+}
+
+.o-option__input {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  
+  &:checked + .o-option__img {
+    border-color: #860038;
+  }
+  
+  &:checked ~ .o-option__txt {
+    color: #860038;
+  }
+}
+
+.o-option__txt {
+  font-size: calc(1em + 1.1vw);
+  display: block;
+  pointer-events: none;
+}
+
+.o-btn {
+  width: 20vw;
+  height: 20vw;
+  max-height: 200px;
+  max-width: 200px;
+  font-size: calc(1em + 1.1vw);
+  font-family: inherit;
+  border-radius: 50%;
+  border: 0;
+  background-color: #860038;
+  color: #FDBB30;
+  cursor: pointer;
+  outline: 0;
+  
+  &:hover {
+    background-color: #fdbb30;
+    color: #860038;
+  }
+}
+
+.c-logo {
+  transform: translateX(-100%);
+}
+
+.c-logo__img {
+  width: 20vw;
+  height: 20vw;
+  max-height: 200px;
+  max-width: 200px;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.has-animation {
+  .c-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .o-option,
+  .c-action,
+  .c-logo__img {
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-out;
+    transition-delay: .1s;
+  }
+  
+  .c-action,
+  .c-logo__img,
+  .is-active .o-option:not(.is-checked) {
+    transform: scale(0);
+    opacity: 0;
+    z-index: 0;
+  }
+
+  .is-active.c-actions {
+    z-index: 1;
+  }
+
+  .is-active .c-action,
+  .is-active .c-logo__img {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .is-active.c-4options {
+    z-index: -1;
+    .is-checked.o-option:nth-child(1) {
+      transform: translateX(100%);
+    }
+    .is-checked.o-option:nth-child(3) {
+      transform: translateX(-100%);
+    }
+    .is-checked.o-option:nth-child(4) {
+      transform: translateX(-200%);
+    }
+  }
+}
+
+.u-flex-end {
+  justify-content: flex-end;
+}
+
+.u-txt-center {
+  text-align: center;
+}
+
+.u-centralise {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.u-pos-relative {
+  position: relative;
+}
+
+.u-margin-bot {
+  margin-bottom: 2em;
+}
