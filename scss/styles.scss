@@ -41,6 +41,10 @@ h1 {
     display: block;
     padding: 1em;
 
+    input {
+      outline: -webkit-focus-ring-color auto 5px;
+    }
+
     * {
       display: inline-block;
       vertical-align: middle;
@@ -98,13 +102,11 @@ h1 {
     margin-bottom: 1em;
     border-radius: 50%;
     border: 4px solid #fdbb30;
-    pointer-events: none;
   }
 
   .o-option__input {
     opacity: 0;
     position: absolute;
-    pointer-events: none;
     
     &:checked + .o-option__img {
       border-color: #860038;
@@ -118,7 +120,6 @@ h1 {
   .o-option__txt {
     font-size: calc(1em + 1.1vw);
     display: block;
-    pointer-events: none;
   }
 
   .o-btn {

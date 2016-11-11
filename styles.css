@@ -34,6 +34,8 @@ h1 {
 .basic .l-option {
   display: block;
   padding: 1em; }
+  .basic .l-option input {
+    outline: -webkit-focus-ring-color auto 5px; }
   .basic .l-option * {
     display: inline-block;
     vertical-align: middle;
@@ -85,13 +87,11 @@ h1 {
   margin-bottom: 1em;
   -webkit-border-radius: 50%;
           border-radius: 50%;
-  border: 4px solid #fdbb30;
-  pointer-events: none; }
+  border: 4px solid #fdbb30; }
 
 .enhanced .o-option__input {
   opacity: 0;
-  position: absolute;
-  pointer-events: none; }
+  position: absolute; }
   .enhanced .o-option__input:checked + .o-option__img {
     border-color: #860038; }
   .enhanced .o-option__input:checked ~ .o-option__txt {
@@ -100,8 +100,7 @@ h1 {
 .enhanced .o-option__txt {
   font-size: -webkit-calc(1em + 1.1vw);
   font-size: calc(1em + 1.1vw);
-  display: block;
-  pointer-events: none; }
+  display: block; }
 
 .enhanced .o-btn {
   width: 20vw;
